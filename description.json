@@ -1,0 +1,19 @@
+{
+  "name": "Apollo Perception Visualizer 3D Sensor",
+  "accessType": "public",
+  "description": "This sensor will visualize bounding boxes on objects as detected by Apollo Stack. It does not publish any data and instead subscribes to a topic from Apollo perception module. The color of the boxes are:\n\t[\n\t\t\"Car\": \"Green\"\n\t\t\"Pedestrian\": \"Yellow\"\n\t\t\"Bicycle\": \"Cyan\"\n\t\t\"Unknown\":  \"Magenta\"\n\t]\nSee {{DOCS_HOST}}/docs/simulation-content/sensors-list/#apollo-perception-visualizer-3d for more details.",
+  "licenseName": "LG Content",
+  "copyright": "LG Electronics Inc.",
+  "tags": [
+    {
+      "name": "LG"
+    },
+    {
+      "name": "Perception"
+    },
+    {
+      "name": "Default"
+    }
+  ],
+  "id": "ab5d574b-4b32-490f-bc71-f2631d43d5df"
+}
