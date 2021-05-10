@@ -26,12 +26,18 @@ namespace Simulator.Sensors
         [AnalysisMeasurement(MeasurementType.Count)]
         public int MaxTracked = -1;
 
-        public override SensorDistributionType DistributionType => SensorDistributionType.HighLoad;
+        public override SensorDistributionType DistributionType => SensorDistributionType.MainOrClient;
+        public override float PerformanceLoad { get; } = 0.2f;
 
-        void Start()
+        protected override void Initialize()
         {
             WireframeBoxes = SimulatorManager.Instance.WireframeBoxes;
             MapOrigin = MapOrigin.Find();
+        }
+
+        protected override void Deinitialize()
+        {
+            
         }
 
         public override void OnBridgeSetup(BridgeInstance bridge)
