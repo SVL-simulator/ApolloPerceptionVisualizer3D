@@ -18,10 +18,10 @@ namespace Simulator.Sensors
     [SensorType("ApolloPerceptionVisualizer3D", new[] { typeof(Detected3DObjectArray) })]
     public class ApolloPerceptionVisualizer3D : SensorBase
     {
-        Detected3DObject[] Detected = Array.Empty<Detected3DObject>();
+        private Detected3DObject[] Detected = Array.Empty<Detected3DObject>();
 
-        WireframeBoxes WireframeBoxes;
-        MapOrigin MapOrigin;
+        private WireframeBoxes WireframeBoxes;
+        private MapOrigin MapOrigin;
 
         [AnalysisMeasurement(MeasurementType.Count)]
         public int MaxTracked = -1;
@@ -73,7 +73,7 @@ namespace Simulator.Sensors
                     return;
                 }
 
-                var position = MapOrigin.FromNorthingEasting(detected.Gps.Northing, detected.Gps.Easting);
+                var position = MapOrigin.NorthingEastingToPosition(detected.Gps.Northing, detected.Gps.Easting);
                 position.y = (float)detected.Gps.Altitude - MapOrigin.AltitudeOffset;
 
                 var mapRotation = MapOrigin.transform.localRotation;
